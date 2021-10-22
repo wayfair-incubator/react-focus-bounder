@@ -2,14 +2,14 @@
   "name": "react-focus-bounder",
   "version": "1.0.0",
   "description": "Focus looping component based on focus bounders.",
-  "homepage": "https://github.com/wayfair/react-focus-bounder",
-  "repository": "github:wayfair/react-focus-bounder",
+  "homepage": "https://github.com/wayfair-incubator/react-focus-bounder",
+  "repository": "github:wayfair-incubator/react-focus-bounder",
   "license": "MIT",
   "main": "./index.js",
   "exports": "./index.js",
   "types": "./index.d.ts",
   "bugs": {
-    "url": "https://github.com/wayfair/react-focus-bounder/issues"
+    "url": "https://github.com/wayfair-incubator/react-focus-bounder/issues"
   },
   "keywords": [
     "react", "focus-bounder", "focus-trap"
