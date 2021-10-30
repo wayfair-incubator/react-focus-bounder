@@ -78,7 +78,7 @@ Distributed under the `MIT License` License. See `LICENSE` for more information.
 
 ## Contact
 
-Valentin Podkamennyi - [@vpodk](https://twitter.com/vpodk) - vpodkamennyi@gmail.com
+Valentin Podkamennyi - [@vpodk](https://twitter.com/vpodk)
 
 Project Link: [https://github.com/wayfair-incubator/react-focus-bounder](https://github.com/wayfair-incubator/react-focus-bounder)
 
