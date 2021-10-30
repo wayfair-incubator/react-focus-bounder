@@ -8,9 +8,12 @@ import "./index.css";
 /** A CSS class name for the bounding elements. */
 const BOUNDER_LINK_CLASS_NAME = "FocusBounder-link";
 
-/** A CSS selectors for all focusable elements. */
+/** 
+ * A CSS selectors for all focusable elements.
+ * @see https://developer.mozilla.org/en-US/docs/Web/CSS/:not
+ */
 const FOCUSABLE_ELEMENTS_SELECTORS = [
-  `a:not(.${BOUNDER_LINK_CLASS_NAME})`,
+  `a:not(.${BOUNDER_LINK_CLASS_NAME}):not([disabled])`,
   "button:not([disabled]), input:not([disabled])",
   "select:not([disabled]), textarea:not([disabled])",
 ];
