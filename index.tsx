@@ -8,6 +8,13 @@ import "./index.css";
 /** A CSS class name for the bounding elements. */
 const BOUNDER_LINK_CLASS_NAME = "FocusBounder-link";
 
+/** A CSS selectors for all focusable elements. */
+const FOCUSABLE_ELEMENTS_SELECTORS = [
+  `a:not(.${BOUNDER_LINK_CLASS_NAME})`,
+  "button:not([disabled]), input:not([disabled])",
+  "select:not([disabled]), textarea:not([disabled])",
+];
+
 type FocusBounderProps = {
   children: React.ReactNode;
   firstElementIndex?: number;
@@ -45,7 +52,7 @@ const FocusBounder = ({
         const container = focusBounder.current.parentNode;
         // Getting all focusable elements in the boudered container.
         const focusable = container!.querySelectorAll<HTMLAnchorElement>(
-          `a:not(.${BOUNDER_LINK_CLASS_NAME}), button, input, select, textarea`
+          FOCUSABLE_ELEMENTS_SELECTORS.join(",")
         );
         // Getting the first or last focusable element, depending on the passed index.
         const element = focusable[index < 0 ? focusable.length + index : index];
