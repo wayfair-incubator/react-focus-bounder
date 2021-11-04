@@ -8,33 +8,39 @@
 
 Focus looping component based on focus bounders.
 
+This small React component will cover one of the important aspects to make a web-page accessible - looping (aka trapping) focus inside a DOM element.
+
+Keyboard navigation is a basic requirement in making any product accessible.
+For web pages it can be achieved by combination of semantic HTML, `tabIndex` and `aria` attributes.
+
+Focus looping is an important part of A11Y support.
+Good examples where a focus looping component can be used are a hamburger or dropdown menus and modal dialogs.
+
 ## Getting Started
 
 To get a local copy up and running follow these simple steps.
 
 ### Prerequisites
 
-This is an example of how to list things you need to use the software and how to install them.
+Be sure you use latest stable version of `npm`:
 
-- npm
-
-  ```sh
-  npm install npm@latest -g
-  ```
+```sh
+npm install npm@latest -g
+```
 
 ### Installation
 
-1. Clone the repo
+Clone the repo
 
-   ```sh
-   git clone https://github.com/wayfair-incubator/react-focus-bounder.git
-   ```
+```sh
+git clone https://github.com/wayfair-incubator/react-focus-bounder.git
+```
 
-2. Install NPM packages
+Install NPM packages
 
-   ```sh
-   npm install
-   ```
+```sh
+npm install
+```
 
 ## Usage
 
@@ -53,7 +59,10 @@ import FocusBounder from 'react-focus-bounder';
 </FocusBounder>
 ```
 
-_For more examples, please refer to the [Documentation](https://example.com) or the [Wiki](https://github.com/wayfair-incubator/react-focus-bounder/wiki)_
+## Component props
+
+- `firstElementIndex` - An optional index of the first focusable element. Default `0`.
+- `focusTimeoutDelay` - An optional timeout to wait for the element to be fully visible. Default `0`.
 
 ## Roadmap
 
@@ -69,7 +78,7 @@ Distributed under the `MIT License` License. See `LICENSE` for more information.
 
 ## Contact
 
-Valentin Podkamennyi - [@vpodk](https://twitter.com/vpodk) - vpodkamennyi@gmail.com
+Valentin Podkamennyi - [@vpodk](https://twitter.com/vpodk)
 
 Project Link: [https://github.com/wayfair-incubator/react-focus-bounder](https://github.com/wayfair-incubator/react-focus-bounder)
 
