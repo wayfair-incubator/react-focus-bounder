@@ -30,20 +30,6 @@ Be sure you use latest stable version of `npm`:
 npm install npm@latest -g
 ```
 
-### Installation
-
-Clone the repo
-
-```sh
-git clone https://github.com/wayfair-incubator/react-focus-bounder.git
-```
-
-Install NPM packages
-
-```sh
-npm install
-```
-
 ## Usage
 
 ```bash
@@ -69,6 +55,7 @@ import FocusBounder from 'react-focus-bounder';
 
 - `firstElementIndex` - An optional index of the first focusable element. Default `0`.
 - `focusTimeoutDelay` - An optional timeout to wait for the element to be fully visible. Default `0`.
+- `isEnabled` - An optional property to enable or disable this component functionality. Default `true`.
 
 ## Roadmap
 
