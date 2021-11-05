@@ -11,12 +11,69 @@
   "bugs": {
     "url": "https://github.com/wayfair-incubator/react-focus-bounder/issues"
   },
+  "scripts": {
+    "lint": "eslint --ext .js,.jsx,.ts,.tsx ./"
+  },
   "keywords": [
-    "react", "focus-bounder", "focus-trap"
+    "focus-bounder",
+    "focus-loop",
+    "focus-trap",
+    "react"
   ],
   "dependencies": {
     "react": "^17.0.2",
     "testing-library": "^0.0.2",
     "typescript": "^4.4.3"
-  }
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.3.0",
+    "eslint-plugin-react": "^7.26.1"
+  },
+  "eslintConfig": {
+    "env": {
+      "browser": true,
+      "es2021": true
+    },
+    "extends": [
+      "eslint:recommended",
+      "plugin:@typescript-eslint/recommended",
+      "plugin:react/recommended",
+      "plugin:react/jsx-runtime"
+    ],
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+      "ecmaFeatures": {
+        "jsx": true
+      },
+      "ecmaVersion": "latest",
+      "sourceType": "module"
+    },
+    "plugins": [
+      "react",
+      "@typescript-eslint"
+    ],
+    "rules": {
+      "indent": [
+        "error",
+        2
+      ],
+      "linebreak-style": [
+        "error",
+        "unix"
+      ],
+      "semi": [
+        "error",
+        "always"
+      ],
+      "no-empty": "warn"
+    },
+    "settings": {
+      "react": {
+        "version": "latest"
+      }
+    }
+  },
+  "eslintIgnore": [
+    "__tests__"
+  ]
 }
