@@ -22,6 +22,7 @@ type FocusBounderProps = {
   children: React.ReactNode;
   firstElementIndex?: number;
   focusTimeoutDelay?: number;
+  isEnabled?: boolean;
 };
 
 /**
@@ -30,11 +31,13 @@ type FocusBounderProps = {
  * @param {!React.ReactNode} props.children Child nodes to be wrapped.
  * @param {number=} props.firstElementIndex An optional index of the first focusable element.
  * @param {number=} props.focusTimeoutDelay An optional timeout to wait for the element to be fully visible.
+ * @param {boolean=} props.isEnabled An optional property to enable or disable this component functionality.
  */
 const FocusBounder = ({
   children,
   firstElementIndex = 0,
   focusTimeoutDelay = 0,
+  isEnabled = true,
 }: FocusBounderProps) => {
   /**
    * A reference to the first of the two bounding elements.
@@ -50,7 +53,7 @@ const FocusBounder = ({
    */
   const setFocus = useCallback(
     (index: number) => {
-      if (focusBounder.current) {
+      if (isEnabled && focusBounder.current) {
         // Getting the container element containing bounders.
         const container = focusBounder.current.parentNode;
         // Getting all focusable elements in the boudered container.
@@ -70,7 +73,7 @@ const FocusBounder = ({
         }
       }
     },
-    [focusBounder, focusTimeoutDelay]
+    [isEnabled, focusBounder, focusTimeoutDelay]
   );
 
   /**
