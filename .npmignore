@@ -1,0 +1,5 @@
+__tests__
+.github
+node_modules
+.markdownlint.json
+*.md
