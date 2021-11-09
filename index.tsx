@@ -8,7 +8,7 @@ import "./index.css";
 /** A CSS class name for the bounding elements. */
 const BOUNDER_LINK_CLASS_NAME = "FocusBounder-link";
 
-/** 
+/**
  * A CSS selectors for all focusable elements.
  * @see https://developer.mozilla.org/en-US/docs/Web/CSS/:not
  */
@@ -54,7 +54,7 @@ const FocusBounder = ({
         // Getting the container element containing bounders.
         const container = focusBounder.current.parentNode;
         // Getting all focusable elements in the boudered container.
-        const focusable = container!.querySelectorAll<HTMLAnchorElement>(
+        const focusable = container?.querySelectorAll<HTMLAnchorElement>(
           FOCUSABLE_ELEMENTS_SELECTORS.join(",")
         );
         // Getting the first or last focusable element, depending on the passed index.
