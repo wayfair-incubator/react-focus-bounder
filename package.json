@@ -1,18 +1,18 @@
 {
   "name": "react-focus-bounder",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Focus looping component based on focus bounders.",
   "homepage": "https://github.com/wayfair-incubator/react-focus-bounder",
   "repository": "github:wayfair-incubator/react-focus-bounder",
   "license": "MIT",
-  "main": "./index.js",
-  "exports": "./index.js",
-  "types": "./index.d.ts",
+  "main": "./dist/index.js",
+  "exports": "./dist/index.js",
   "bugs": {
     "url": "https://github.com/wayfair-incubator/react-focus-bounder/issues"
   },
   "scripts": {
-    "lint": "eslint --ext .js,.jsx,.ts,.tsx ./"
+    "build": "webpack",
+    "lint": "eslint --ext .js,.jsx,.ts,.tsx ./src"
   },
   "keywords": [
     "focus-bounder",
@@ -22,14 +22,31 @@
   ],
   "dependencies": {
     "react": "^17.0.2",
-    "testing-library": "^0.0.2",
     "typescript": "^4.4.3"
   },
   "devDependencies": {
+    "@babel/cli": "^7.16.0",
+    "@babel/core": "^7.16.0",
+    "@babel/preset-env": "^7.16.0",
+    "@babel/preset-react": "^7.16.0",
     "@typescript-eslint/eslint-plugin": "^5.3.0",
     "@typescript-eslint/parser": "^5.3.0",
+    "babel-loader": "^8.2.3",
+    "css-loader": "^6.5.1",
     "eslint": "^7.32.0",
-    "eslint-plugin-react": "^7.26.1"
+    "eslint-loader": "^4.0.2",
+    "eslint-plugin-react": "^7.26.1",
+    "style-loader": "^3.3.1",
+    "ts-jest": "^27.0.7",
+    "ts-loader": "^9.2.6",
+    "webpack": "^5.62.1",
+    "webpack-cli": "^4.9.1"
+  },
+  "babel": {
+    "presets": [
+      "@babel/preset-env",
+      "@babel/preset-react"
+    ]
   },
   "eslintConfig": {
     "env": {
@@ -74,8 +91,5 @@
         "version": "latest"
       }
     }
-  },
-  "eslintIgnore": [
-    "__tests__"
-  ]
+  }
 }

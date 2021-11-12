@@ -3,3 +3,8 @@ __tests__
 node_modules
 .markdownlint.json
 *.md
+.DS_Store
+coverage
+src
+tsconfig.json
+webpack.config.js
