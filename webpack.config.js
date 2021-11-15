@@ -11,34 +11,10 @@ module.exports = {
   module: {
     rules: [
       {
-        enforce: "pre",
-        test: /\.jsx?$/,
-        include: path.resolve(__dirname, "src"),
-        exclude: /(node_modules|dist)/,
-        use: "eslint-loader",
-      },
-      {
-        test: /\.jsx?$/,
-        include: path.resolve(__dirname, "src"),
-        exclude: /(node_modules|dist)/,
-        use: {
-          loader: "babel-loader",
-          options: {
-            presets: ["@babel/preset-env", "@babel/preset-react"],
-          },
-        },
-      },
-      {
         test: /\.(ts|tsx)$/,
         include: path.resolve(__dirname, "src"),
         exclude: /(node_modules|dist)/,
         use: ["ts-loader"],
-      },
-      {
-        test: /\.css$/,
-        include: path.resolve(__dirname, "src"),
-        exclude: /(node_modules|dist)/,
-        use: ["style-loader", "css-loader"],
       },
     ],
   },
