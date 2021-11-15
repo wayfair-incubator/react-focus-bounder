@@ -5,7 +5,7 @@
 import React from 'react';
 import {render} from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import FocusBounder from '../index';
+import FocusBounder from '../src/index';
 
 const renderComponent = () =>
   render(
