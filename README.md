@@ -34,6 +34,8 @@ npm install npm@latest -g
 
 ```bash
 npm install react-focus-bounder
+# Or
+yarn add react-focus-bounder
 ```
 
 ```js
