@@ -2,8 +2,7 @@
  * Focus looping component based on focus bounders.
  */
 
-import React, { useEffect, useCallback, createRef, FocusEvent } from "react";
-import "./index.css";
+import React, { useEffect, useCallback, createRef } from "react";
 
 /** A CSS class name for the bounding elements. */
 const BOUNDER_LINK_CLASS_NAME = "FocusBounder-link";
@@ -17,6 +16,18 @@ const FOCUSABLE_ELEMENTS_SELECTORS = [
   "button:not([disabled]), input:not([disabled])",
   "select:not([disabled]), textarea:not([disabled])",
 ];
+
+/**
+ * A CSS default styles for the bounding elements.
+ */
+const FOCUS_BOUNDER_STYLES = {
+  color: "transparent",
+  opacity: 0,
+  position: "absolute",
+  width: "1px",
+  height: "1px",
+  overflow: "hidden",
+};
 
 type FocusBounderProps = {
   children: React.ReactNode;
@@ -76,18 +87,6 @@ const FocusBounder = ({
     [isEnabled, focusBounder, focusTimeoutDelay]
   );
 
-  /**
-   * Handles `focus` events for both bounding elements.
-   * @param {!FocusEvent} event The focus event object.
-   */
-  const onFocus = (event: FocusEvent<HTMLAnchorElement>) => {
-    // If the currently focused element is the first bounder, setting the
-    // index to -1 to set focus to the last focusable element, otherwise,
-    // setting the index to 0 to set focus to the first focusable element.
-    const index = event.target === focusBounder.current ? -1 : 0;
-    setFocus(index);
-  };
-
   // Setting focus to the first focusable element.
   useEffect(() => setFocus(firstElementIndex), [setFocus, firstElementIndex]);
 
@@ -96,8 +95,9 @@ const FocusBounder = ({
       <a
         ref={focusBounder}
         href="#bounder"
-        onFocus={onFocus}
+        onFocus={() => setFocus(-1)}
         className={BOUNDER_LINK_CLASS_NAME}
+        style={FOCUS_BOUNDER_STYLES}
         aria-hidden="true"
         rel="nofollow"
       >
@@ -106,8 +106,9 @@ const FocusBounder = ({
       {children}
       <a
         href="#bounder"
-        onFocus={onFocus}
+        onFocus={() => setFocus(0)}
         className={BOUNDER_LINK_CLASS_NAME}
+        style={FOCUS_BOUNDER_STYLES}
         aria-hidden="true"
         rel="nofollow"
       >
