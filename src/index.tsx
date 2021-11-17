@@ -2,7 +2,7 @@
  * Focus looping component based on focus bounders.
  */
 
-import React, { useEffect, useCallback, createRef } from "react";
+import React, { useEffect, useCallback, createRef, CSSProperties } from "react";
 
 /** A CSS class name for the bounding elements. */
 const BOUNDER_LINK_CLASS_NAME = "FocusBounder-link";
@@ -20,7 +20,7 @@ const FOCUSABLE_ELEMENTS_SELECTORS = [
 /**
  * A CSS default styles for the bounding elements.
  */
-const FOCUS_BOUNDER_STYLES = {
+const FOCUS_BOUNDER_STYLES: CSSProperties = {
   color: "transparent",
   opacity: 0,
   position: "absolute",
