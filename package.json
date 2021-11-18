@@ -12,7 +12,7 @@
   },
   "scripts": {
     "build": "webpack",
-    "lint": "eslint --ext .js,.jsx,.ts,.tsx ./src",
+    "lint": "eslint --ext .ts,.tsx ./",
     "test": "jest --coverage"
   },
   "keywords": [
@@ -89,7 +89,8 @@
         "error",
         "always"
       ],
-      "no-empty": "warn"
+      "no-empty": "warn",
+      "react/jsx-uses-react": "warn"
     },
     "settings": {
       "react": {
