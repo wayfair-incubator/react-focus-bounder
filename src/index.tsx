@@ -3,6 +3,7 @@
  */
 
 import React, { useEffect, useCallback, createRef, CSSProperties } from "react";
+import {FocusBounderProps} from "../index";
 
 /** A CSS class name for the bounding elements. */
 const BOUNDER_LINK_CLASS_NAME = "FocusBounder-link";
@@ -27,13 +28,6 @@ const FOCUS_BOUNDER_STYLES: CSSProperties = {
   width: "1px",
   height: "1px",
   overflow: "hidden",
-};
-
-type FocusBounderProps = {
-  children: React.ReactNode;
-  firstElementIndex?: number;
-  focusTimeoutDelay?: number;
-  isEnabled?: boolean;
 };
 
 /**
