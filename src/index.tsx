@@ -13,7 +13,12 @@ const BOUNDER_LINK_CLASS_NAME = "FocusBounder-link";
  * @see https://developer.mozilla.org/en-US/docs/Web/CSS/:not
  */
 const FOCUSABLE_ELEMENTS_SELECTORS = [
-  `a:not(.${BOUNDER_LINK_CLASS_NAME}):not([disabled])`,
+  // Links must have `href` attribute to be focusable.
+  `a[href]:not(.${BOUNDER_LINK_CLASS_NAME}):not([disabled])`,
+  // All items with `tabIndex` are focusable but must be >=0
+  "[tabindex]:not([tabindex=-1]):not([disabled])",
+  "[contenteditable]",
+  // Form elements:
   "button:not([disabled]), input:not([disabled])",
   "select:not([disabled]), textarea:not([disabled])",
 ];
