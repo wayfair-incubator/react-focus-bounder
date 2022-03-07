@@ -16,7 +16,7 @@ const FOCUSABLE_ELEMENTS_SELECTORS = [
   // Links must have `href` attribute to be focusable.
   `a[href]:not(.${BOUNDER_LINK_CLASS_NAME}):not([disabled])`,
   // All items with `tabIndex` are focusable but must be >=0
-  "[tabindex]:not([tabindex=-1]):not([disabled])",
+  "[tabindex]:not([tabindex='-1']):not([disabled])",
   "[contenteditable]",
   // Form elements:
   "button:not([disabled]), input:not([disabled])",
