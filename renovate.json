@@ -2,7 +2,7 @@
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "description": "Renovate configuration for react focus bounder repository",
   "extends": [
-    "config:base",
+    "config:recommended",
     ":dependencyDashboard",
     ":rebaseStalePrs"
   ],
